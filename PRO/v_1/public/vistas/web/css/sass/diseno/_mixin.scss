@@ -1,0 +1,122 @@
+@mixin arrow($width: 20px, $height: 20px, $direction: up, $color: red){
+//@include arrow(20px,20px,up,#000);
+  width: 0;
+  height: 0;
+  
+  @if $direction == right {
+    border-top: $height/2 solid transparent;
+    border-bottom: $height/2 solid transparent;
+    border-left: $width solid $color;
+  }
+
+  @if $direction == left {
+    border-top: $height/2 solid transparent;
+    border-bottom: $height/2 solid transparent;
+    border-right: $width solid $color;
+  }
+
+  @if $direction == up {
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+    border-bottom: $height solid $color;
+  }
+
+  @if $direction == down {
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+    border-top: $height solid $color;
+  }
+
+  @if $direction == downLeft{
+    border-right: $width solid transparent;     
+    border-top: $height solid $color; 
+  }
+
+  @if $direction == downRight{
+    border-left: $width solid transparent;     
+    border-top: $height solid $color; 
+  }
+
+  @if $direction == upRight{
+    border-left: $width solid transparent;     
+    border-bottom: $height solid $color; 
+  }
+
+  @if $direction == upLeft{
+    border-right: $width solid transparent;     
+    border-bottom: $height solid $color; 
+  }
+}
+
+@mixin input-placeholder {
+/*input{ 
+  @include input-placeholder{
+    color:red;
+    font-size:2em;
+  }
+}*/
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; } 
+}
+
+@mixin keyframes($name) {
+  /*@include keyframes(bgcolor) {
+    0% {
+      background-color: #ffccf2;
+    }
+    50% {
+      background-color: #ccffcc;
+    }
+    100% {
+      background-color: #ccffff;
+    } 
+  }*/
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin animation($values){
+  -webkit-animation: $values; 
+  -moz-animation: $values;
+  -ms-animation: $values;
+  -o-animation: $values;
+  animation: $values;
+}
+
+//para los prefijos
+@mixin vendor-prefix($name, $argument) {
+  /*
+    @include vendor-prefix(transform, skew(-50deg) rotate(-70deg) scale(1));
+  */
+  #{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -o-#{$name}: $argument;
+}
+
+//para mostrar las pseudoclases
+@mixin beforeAfter($display:block,$position:absolute,$width:100%,$height:100%){
+  content:"";
+  display: $display;
+  width: $width;
+  height: $height;
+  position: $position;
+  @content;
+}

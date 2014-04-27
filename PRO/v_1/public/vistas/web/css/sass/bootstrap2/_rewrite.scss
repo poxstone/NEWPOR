@@ -1,0 +1,68 @@
+
+@import "compass/css3";
+
+$familyH: unquote("Raleway");
+@import url("http://fonts.googleapis.com/css?family=#{$familyH}");
+
+$familyText : unquote("Helvetica, Arial, sans-serif");
+$familyTittle : unquote("Raleway");
+$blacktext : #333;
+$grayLigth: lighten($blacktext, 60);
+$grayLigth2: lighten($blacktext, 59.4);
+
+/*REESCRITURA*/
+th{
+	white-space: nowrap;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: $familyText;
+}
+
+.tempPlaceholder{
+	color: $grayLigth2;
+}
+
+input[type="text"],
+textarea,
+select{
+	background-color: #fff;
+}
+
+textarea {
+	resize:both;  /* none|horizontal|vertical|both */
+
+	&.vert { resize:vertical; }
+	&.noResize { resize:none; }
+}
+
+input[type="checkbox"], input[type="radio"]{
+	position: relative;
+	top: -3px;
+}
+
+input[type="file"]{
+	border: 1px dotted $grayLigth;
+	@include border-radius(4px);
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: $familyTittle;
+	font-weight: normal;
+}
+
+input[class*="span"][class*="text"][disabled]{
+	text-align:center;
+	cursor: default;
+}
+
+.row-fluid[class*="span"]{
+	margin-left: 0 !important;
+	
+	> [class*="span"]{
+		margin-left: 0 !important;
+	}
+}

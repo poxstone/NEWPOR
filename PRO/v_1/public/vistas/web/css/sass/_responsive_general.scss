@@ -1,0 +1,12 @@
+/*mediaqueries*/
+$phone_Widht : 600px;
+$table_Widht : 800px;
+$table: "only screen and (max-width : #{$table_Widht})";
+$phone: "only screen and (max-width : #{$phone_Widht})";
+
+@media #{$phone}{
+	html{
+		background-color: #000;
+		color: #fff; 
+	}	
+}

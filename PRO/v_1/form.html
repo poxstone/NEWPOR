@@ -1,0 +1,157 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Inicio - Proyecto</title>
+	<!-- <meta name="viewport" content="width=device-width , initial-scale=1 ,maximum-scale=1"> -->
+	<meta name="description" content="Nubeti - Empresa Colombia de desarrollo de Software e implementaci&oacute;n de Google Apps">
+	<meta name="keywords" content="Desarrollo de software Bogot&aacute; Colombia, Implementaci&oacute;n Google Apps">
+	<meta name="author" content="Dise&ntilde;o web: nubeti.co [Oscar Ortiz Perez, Juan Rubiano]">
+
+	<link rel="shortcut icon" href="public/vistas/web/imgs/icons/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="public/vistas/web/imgs/icons/favicon.png" type="image/png">
+
+	<link rel="stylesheet" href="public/vistas/web/css/bootstrap.css">
+	<link rel="stylesheet" href="public/vistas/web/css/portal_general.css">
+	<!--[if IE]> <link href="public/vistas/web/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" /><![endif]-->
+
+	<script type="text/javascript" src="public/vistas/web/js/modernizr.custom.js"></script>
+	<script type="text/javascript" src="public/vistas/web/js/jquery.min.js"></script>
+
+	<script type="text/javascript" src="public/vistas/web/js/portal_diseno.js"></script>
+	<script src="public/vistas/web/js/validaciones.js"></script>
+</head>
+<body>
+
+	<script>
+	</script>
+
+	<form id="formContacto" onsubmit="valide.ini(this,event)" name="formContacto" action="public/vistas/web/phps/forms/prb.php" method="post">
+	
+			<legend>Formulario 1</legend>
+		<fieldset>
+
+			<input type="hidden" name="oculto">
+			
+			<label for="nombre">Nombre:</label>
+			<input type="text" name="nombre" id="nombre" placeholder="nombre" data-type="text">
+			<div id="nombreErr" class="error">error</div>
+
+			<label for="email">email:</label>
+			<input type="text" name="email" id="email" placeholder="email" data-type="email">
+			<div id="emailErr" class="error">error</div>
+			
+			<label for="telefono">Teléfono:</label>
+			<input type="text" name="telefono" id="telefono" placeholder="telefono" data-type="number">
+			<div id="telefonoErr" class="error">error</div>
+			
+			<label for="clave">Clave:</label>
+			<input type="password" name="clave" id="clave" data-type="password">
+			<div id="claveErr" class="error">error</div>
+
+		</fieldset>
+
+		<fieldset>
+			Sexo:
+			<label for="hombre">Hombre:</label>
+			<input type="radio" name="sexo" id="hombre" value="hombre" data-type="radio">
+			<label for="mujer">Mujer:</label>
+			<input type="radio" name="sexo" id="mujer" value="mujer" data-type="radio">
+			<label for="gay">Gay:</label>
+			<input type="radio" name="sexo" id="gay" value="gay" data-type="radio">
+			<div id="sexoErr" class="error">error</div>
+		</fieldset>
+
+		<fieldset>
+			Intereses:
+			<label for="ninguna">Ninguna</label>
+			<input type="checkbox" name="intereses[]" id="ninguna" value="ninguna" data-type="check">
+			<label for="deporte">Deporte</label>
+			<input type="checkbox" name="intereses[]" id="deporte" value="deporte" data-type="check">
+			<label for="musica">Musica</label>
+			<input type="checkbox" name="intereses[]" id="musica" value="musica" data-type="check">
+			<label for="arte">Arte</label>
+			<input type="checkbox" name="intereses[]" id="arte" value="arte" data-type="check">
+			<label for="ciencia">Ciencia</label>
+			<input type="checkbox" name="intereses[]" id="ciencia" value="ciencia" data-type="check">
+			<div id="intereses[]Err" class="error">error</div>
+		</fieldset>
+		
+		<fieldset>
+			Areas:
+			<label for="diseno">diseno</label>
+			<input type="checkbox" name="diseno" id="diseno" data-type="check">
+			<div id="disenoErr" class="error">error</div>
+			<label for="desarrollo">desarrollo</label>
+			<input type="checkbox" name="desarrollo" id="desarrollo" data-type="check">
+			<div id="desarrolloErr" class="error">error</div>
+		</fieldset>
+
+		<fieldset>
+			<label for="pais">Pais</label>
+			<select name="pais" id="pais" data-type="select">
+				<option value="">ninguno</option>
+				<option value="Colombia">Colombia</option>
+				<option value="Mexico">Mexico</option>
+			</select>
+			<div id="paisErr" class="error">error</div>
+		</fieldset>
+
+		<fieldset>
+			<label for="archivo">Archivo</label>
+			<input type="file" name="archivo" id="archivo" placeholder="diseño" data-type="file(gif,jpg,png,txt)" multiple>
+			<div id="archivoErr" class="error">error</div>
+		</fieldset>
+
+		<fieldset>			
+			<label for="estudios">Estudios:</label>
+			<select name="estudios[]" id="estudios" multiple data-type="select">
+					<option value="">ninguno</option>
+				<optgroup label="Básico">
+					<option >Primaria</option>
+					<option >Bachiderato</option>
+				</optgroup>
+				<optgroup label="Universitarios">
+					<option >Tecnico</option>
+					<option >Universitario</option>|
+					<option >Doctor</option>
+					<option >Empririco</option>
+				</optgroup>
+			</select>
+			<div id="estudios[]Err" class="error">error</div>
+		</fieldset>
+
+		<fieldset>
+			<label for="mensaje">Mensaje</label>
+			<textarea name="mensaje" id="mensaje" placeholder="Mensaje" data-type="text"></textarea>
+			<div id="mensajeErr" class="error">error</div>
+		</fieldset>
+		<input type="submit" value="enviar">
+		<input type="reset" value="reset">
+		<input type="button" value="inpboton">
+		<input type="image" src="" alt="imagen">
+		<hr>
+		<button>boton</button>
+		<button type="submit">boton submit</button>
+		<button type="reset">boton reset</button>
+		<button type="button">boton button</button>
+	</form>
+
+<style>
+	.error{
+		position: relative;
+		top: -0.65em;
+		color: red;
+		display: none;
+	}
+	input, label{
+		display: inline-block;
+	}
+	fieldset{
+		margin-bottom: 0.5em;
+	}
+</style>
+	
+</body>
+</html>
